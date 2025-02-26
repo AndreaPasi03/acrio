@@ -1,0 +1,40 @@
+{
+    "name": "acrio",
+    "version": "1.0.0",
+    "description": "NPM React Typescript library",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rm -rf dist/ && npx prettier --write src/ && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AndreaPasi03/acrio.git"
+    },
+    "keywords": [
+        "Acrio"
+    ],
+    "author": "Paaas",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AndreaPasi03/acrio/issues"
+    },
+    "homepage": "https://github.com/AndreaPasi03/acrio#readme",
+    "devDependencies": {
+        "@types/node": "^22.13.5",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "typescript": "^5.7.3"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    }
+}
