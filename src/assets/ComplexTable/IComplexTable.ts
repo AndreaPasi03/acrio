@@ -6,6 +6,7 @@ export interface IComplexColumnProps<T> {
     field?: keyof T;
     // fieldType?: T[keyof T];
     width?: Property.Width<string | number> | undefined;
+    align?: 'center' | 'left' | 'right' | 'justify';
     hideHeader?: boolean;
     hideColumn?: boolean;
     customElement?: (item: T) => React.JSX.Element;
