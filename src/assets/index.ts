@@ -1,1 +1,1 @@
-export * from './ComplexTable';
+export * from './icons';
