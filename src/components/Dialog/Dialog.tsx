@@ -28,8 +28,7 @@ export const Dialog: React.FC<IDialogProps> = (props: IDialogProps) => {
     return (
         <div style={_style} onClick={handleOverlayClick} {...rest}>
             <div style={DialogStyle}>
-                <DialogTitle onClose={onClose}>{title}</DialogTitle>
-                <DialogBody>{children}</DialogBody>
+                {children}
             </div>
         </div>
     );

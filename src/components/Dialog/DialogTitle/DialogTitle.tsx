@@ -11,14 +11,14 @@ export interface IDialogTitleProps extends React.DetailedHTMLProps<React.HTMLAtt
 }
 
 export const DialogTitle: FC<IDialogTitleProps> = (props: IDialogTitleProps) => {
-    const { children, titleStyle, onClose: closeAction, style, icon = <CloseIcon /> } = props;
+    const { children, titleStyle, onClose, style, icon = <CloseIcon /> } = props;
 
     let _style: CSSProperties = { ...BoxStyle, ...style };
 
     return (
         <div style={_style} {...props}>
             <span style={titleStyle}>{children}</span>
-            <IconButton onClick={closeAction}>{icon}</IconButton>
+            <IconButton onClick={onClose}>{icon}</IconButton>
         </div>
     );
 };
