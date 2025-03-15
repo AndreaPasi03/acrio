@@ -1,24 +1,28 @@
 import React, { CSSProperties, JSX } from 'react';
 import { FC } from 'react';
 import { CloseIcon } from '../../../assets';
-import { BoxStyle } from './DialogTitle.style';
+import { BoxStyle, SpanStyle } from './DialogTitle.style';
 import { IconButton } from '../../IconButton';
 
 export interface IDialogTitleProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     titleStyle?: CSSProperties;
     icon?: JSX.Element;
-    onClose?: () => void;
+    onCloseAction?: () => void;
 }
 
 export const DialogTitle: FC<IDialogTitleProps> = (props: IDialogTitleProps) => {
-    const { children, titleStyle, onClose, style, icon = <CloseIcon /> } = props;
+    const { children, titleStyle, onCloseAction, style, icon = <CloseIcon /> } = props;
 
     let _style: CSSProperties = { ...BoxStyle, ...style };
 
+    const _tytleStyle: CSSProperties = { ...titleStyle, ...SpanStyle };
+
     return (
-        <div style={_style} {...props}>
-            <span style={titleStyle}>{children}</span>
-            <IconButton onClick={onClose}>{icon}</IconButton>
+        <div style={_style}>
+            <span style={_tytleStyle}>{children}</span>
+            <IconButton onClick={onCloseAction} style={{ position: 'absolute', right: 5 }}>
+                {icon}
+            </IconButton>
         </div>
     );
 };

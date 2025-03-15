@@ -1,3 +1,4 @@
 export * from './Dialog';
-export * from './Dialog.style';
+export * from './DialogBody';
 export * from './DialogTitle';
+export * from './DialogFooter';

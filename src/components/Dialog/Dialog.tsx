@@ -1,35 +1,45 @@
 import React from 'react';
 import { BoxStyle, DialogStyle } from './Dialog.style';
-import { DialogTitle } from './DialogTitle';
-import { DialogBody } from './DialogBody';
+import { getMaxWidthValue, MaxWidth } from '../../types';
 
 export interface IDialogProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    isOpen: boolean;
-    onClose: () => void;
-    style?: React.CSSProperties;
-    children: React.ReactNode;
-    title?: string;
+    /**
+     * Show or Hide the Dialog
+     */
+    open: boolean;
+
+    /**
+     * On close of the Dialog
+     * @param event → pass the event
+     * @returns void
+     */
+    onClose: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+
+    /**
+     * Dialog width
+     */
+    maxWidth?: MaxWidth | string | number | undefined;
 }
 
 export const Dialog: React.FC<IDialogProps> = (props: IDialogProps) => {
-    const { isOpen, onClose, style, children, title, ...rest } = props;
+    const { open, onClose, style, children, maxWidth, ...rest } = props;
 
-    if (!isOpen) return null;
+    if (!open) return null;
 
     const _style: React.CSSProperties = {
         ...BoxStyle,
         ...style
     };
 
-    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (e.target === e.currentTarget) onClose();
+    if (maxWidth) DialogStyle.maxWidth = getMaxWidthValue(maxWidth);
+
+    const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (event.target === event.currentTarget) onClose(event);
     };
 
     return (
         <div style={_style} onClick={handleOverlayClick} {...rest}>
-            <div style={DialogStyle}>
-                {children}
-            </div>
+            <div style={DialogStyle}>{children}</div>
         </div>
     );
 };

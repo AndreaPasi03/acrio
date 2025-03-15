@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
+import { CSSProperties } from 'react';
 
-export const SlideButtonStyle: CSSProperties = {
-    
-}
+export const SlideButtonStyle: CSSProperties = {};
