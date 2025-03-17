@@ -1,6 +1,6 @@
-import { CSSProperties } from 'react';
+import React from 'react';
 
-export const BoxStyle: CSSProperties = {
+export const BoxStyle: React.CSSProperties = {
     display: 'flex',
     flex: 1,
     justifyContent: 'space-evenly',
