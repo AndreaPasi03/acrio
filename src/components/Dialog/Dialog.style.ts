@@ -18,5 +18,6 @@ export const DialogStyle: CSSProperties = {
     borderRadius: '8px',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
     maxWidth: '500px',
-    width: '100%'
+    width: '100%',
+    height: 700
 };

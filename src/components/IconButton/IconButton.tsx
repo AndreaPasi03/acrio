@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { IconButtonHoverStyle, IconButtonStyle } from './IconButton.style';
 
 export interface IIconButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
 
-export const IconButton: FC<IIconButtonProps> = (props: IIconButtonProps) => {
+export const IconButton: React.FC<IIconButtonProps> = (props: IIconButtonProps) => {
     const { children, style, ...rest } = props;
 
     let _style = { ...IconButtonStyle, ...style };

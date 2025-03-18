@@ -3,3 +3,4 @@ export * from './Box';
 export * from './Container';
 export * from './Dialog';
 export * from './SlideButton';
+export * from './Tooltip';

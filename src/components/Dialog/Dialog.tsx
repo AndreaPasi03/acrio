@@ -19,10 +19,20 @@ export interface IDialogProps extends React.DetailedHTMLProps<React.HTMLAttribut
      * Dialog width
      */
     maxWidth?: MaxWidth | string | number | undefined;
+
+    /**
+     * Dialog Full Width
+     */
+    fullWidth?: boolean;
+
+    /**
+     * Dialog height
+     */
+    height?: string | number | undefined;
 }
 
 export const Dialog: React.FC<IDialogProps> = (props: IDialogProps) => {
-    const { open, onClose, style, children, maxWidth, ...rest } = props;
+    const { open, onClose, style, children, maxWidth, fullWidth, height, ...rest } = props;
 
     if (!open) return null;
 
@@ -32,6 +42,8 @@ export const Dialog: React.FC<IDialogProps> = (props: IDialogProps) => {
     };
 
     if (maxWidth) DialogStyle.maxWidth = getMaxWidthValue(maxWidth);
+    if (fullWidth) DialogStyle.maxWidth = '100%';
+    if (height) DialogStyle.height = height;
 
     const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (event.target === event.currentTarget) onClose(event);
