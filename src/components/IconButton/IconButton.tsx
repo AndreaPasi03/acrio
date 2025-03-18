@@ -7,7 +7,7 @@ import { IconButtonHoverStyle, IconButtonStyle } from './IconButton.style';
 export interface IIconButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
 
 /**
- *
+ * Button used for Icons
  * @param children
  * @param style
  * @returns Button Element
