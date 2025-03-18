@@ -36,22 +36,23 @@ export const Dialog: React.FC<IDialogProps> = (props: IDialogProps) => {
 
     if (!open) return null;
 
-    const _style: React.CSSProperties = {
-        ...BoxStyle,
-        ...style
-    };
+    const _style = { ...DialogStyle, ...style };
 
-    if (maxWidth) DialogStyle.maxWidth = getMaxWidthValue(maxWidth);
-    if (fullWidth) DialogStyle.maxWidth = '100%';
-    if (height) DialogStyle.height = height;
+    if (maxWidth) _style.maxWidth = getMaxWidthValue(maxWidth);
+    if (fullWidth) _style.maxWidth = '100%';
+    if (height) _style.height = height;
 
+    /**
+     * On Click outside of the dialog div
+     * @param event
+     */
     const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (event.target === event.currentTarget) onClose(event);
     };
 
     return (
-        <div style={_style} onClick={handleOverlayClick} {...rest}>
-            <div style={DialogStyle}>{children}</div>
+        <div style={BoxStyle} onClick={handleOverlayClick} {...rest}>
+            <div style={_style}>{children}</div>
         </div>
     );
 };
