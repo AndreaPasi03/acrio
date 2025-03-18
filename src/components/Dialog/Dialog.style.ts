@@ -1,6 +1,6 @@
-import { CSSProperties } from 'react';
+import React from 'react';
 
-export const BoxStyle: CSSProperties = {
+export const BoxStyle: React.CSSProperties = {
     position: 'fixed',
     top: 0,
     left: 0,
@@ -13,7 +13,7 @@ export const BoxStyle: CSSProperties = {
     zIndex: 1000
 };
 
-export const DialogStyle: CSSProperties = {
+export const DialogStyle: React.CSSProperties = {
     backgroundColor: '#fff',
     borderRadius: '8px',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',

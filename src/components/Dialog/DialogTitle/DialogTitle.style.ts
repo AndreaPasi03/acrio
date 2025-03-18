@@ -1,14 +1,15 @@
-import { CSSProperties } from 'react';
+import React from 'react';
 
-export const BoxStyle: CSSProperties = {
+export const BoxStyle: React.CSSProperties = {
     display: 'flex',
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
+    height: 40
 };
 
-export const SpanStyle: CSSProperties = {
+export const SpanStyle: React.CSSProperties = {
     display: 'flex',
     flex: 1,
     justifyContent: 'flex-start',
