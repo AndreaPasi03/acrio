@@ -1,11 +1,11 @@
-import { CSSProperties } from 'react';
+import React from 'react';
 
-export const tooltipContainer: CSSProperties = {
+export const tooltipContainer: React.CSSProperties = {
     position: 'relative',
     display: 'inline-block'
 };
 
-export const tooltipTextBase: CSSProperties = {
+export const tooltipTextBase: React.CSSProperties = {
     visibility: 'hidden',
     backgroundColor: 'black',
     color: 'white',
@@ -31,7 +31,7 @@ export const tooltipPositions = {
     'bottom-right': { top: '100%', left: '100%', transform: 'translateX(5px)', borderTopLeftRadius: 0 }
 };
 
-export const tooltipArrowBase: CSSProperties = {
+export const tooltipArrowBase: React.CSSProperties = {
     position: 'absolute',
     width: '0',
     height: '0',
